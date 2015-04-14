@@ -13,8 +13,10 @@ function init(){
 }
 function startGame(){
   $('#start').on('click', initTowers);
+  //$('#t1').empty();
 }
 function initTowers(){
+  $('.tower').empty();
   var level = $('#difficulty').val() * 1;
   for(var i = 0; i < level; i++){
     var $div = $('<div>');
