@@ -1,7 +1,10 @@
 body{
-  color: #f6f6f6;
+  color: #292c33;
   background-color: #292c33;
-  text-align: center
+  text-align: center;
+  background-image: url("/assets/vietnam.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 #header{
   margin: auto;
@@ -17,35 +20,38 @@ body{
   padding: 15px;
 }
 #container{
-  background-color: gray;
+  background-color: transparent;
   max-width: 1400px;
-  min-height: 700px;
+  max-height: 700px;
   margin: auto;
   margin-top: 100px;
 }
 .towerBox{
   display: inline-block;
-//   position: absolute;
-//   bottom: 0;
- }
+  position: relative;
+  bottom: 0;
+}
 .tower{
+  background-color: rgba(40, 43, 49, 0.5);
   margin: 10px;
   margin-top: 15px;
   width: 370px;
   min-height: 670px;
-
+  padding: 0;
   border: 1px solid black;
   display: inline-block;
+  //display: inline-block;
   position: relative;
+  overflow: auto;
 }
 #t1{
-  background-color: lightblue;
+  //background-color: lightblue;
 }
 #t2{
-  background-color: lightgreen;
+  //background-color: lightgreen;
 }
 #t3{
-  background-color: lightpink;
+  //background-color: lightpink;
 }
 .disc{
   //position: absolute;
@@ -54,6 +60,7 @@ body{
   margin: auto;
   clear: both;
   bottom: 0;
-  background-color: green;
+  background-color: rgba(250, 250, 250, 0.75);
   border: 1px solid black;
+  border-radius: 5px;
 }

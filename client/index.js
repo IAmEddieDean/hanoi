@@ -1,5 +1,4 @@
 'use strict';
-//var moveCount = 0;
 var $source;
 var $target;
 $(document).ready(init);
@@ -13,14 +12,13 @@ function init(){
 }
 function startGame(){
   $('#start').on('click', initTowers);
-  //$('#t1').empty();
 }
 function initTowers(){
   $('.tower').empty();
   var level = $('#difficulty').val() * 1;
   for(var i = 0; i < level; i++){
     var $div = $('<div>');
-    var width = (((i +1)/10)*100);
+    var width = ((i +1)*10);
     $div.attr('id', i);
     $div.text(i + 1);
     $div.addClass('disc');
