@@ -1,17 +1,15 @@
 'use strict';
-var moveCount = 0;
-
+//var moveCount = 0;
+var $source;
+var $target;
 $(document).ready(init);
-
-
-
 
 function init(){
   initTowers();
   startGame();
-  
-  $('.tower').on('click', '.tower', select);
-  $('.tower').on('click', '.tower', drop);
+   
+  $('.tower').on('click', '.disc', select);
+  $('.tower').on('click', null, drop);
 }
 function startGame(){
   $('#start').on('click', initTowers);
@@ -20,15 +18,31 @@ function initTowers(){
   var level = $('#difficulty').val() * 1;
   for(var i = 0; i < level; i++){
     var $div = $('<div>');
-    //var width = (((i +1)/10)*100);
-    $div.data('index', i);
+    var width = (((i +1)/10)*100);
+    $div.attr('id', i);
+    $div.text(i + 1);
     $div.addClass('disc');
-    //$div.css('width', width + '%');
+    $div.css('width', width + '%');
     $('#t1').append($div);
   }
   
 }
 function select(){
-  var $source = $(this).first-child;
-  console.log($source);
+  if ($(this).is(':first-child')){
+    $source = $(this);
+  }
+  else {
+    return;
+  }
+}
+function drop(){
+  $target = $(this);
+  move();
+}
+function move(){
+  var kiddies = $target.children('.disc')[0];
+  if (kiddies && $source.attr('id') > kiddies.id){
+    return;
+  }
+  $target.prepend($source);
 }

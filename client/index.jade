@@ -12,9 +12,12 @@ html
       input#difficulty(type='number' min='3' max='10')
       button#start Start Game
     #container
-      #t1.tower
-      #t2.tower
-      #t3.tower
+      .towerBox
+        #t1.tower.available
+      .towerBox
+        #t2.tower.available
+      .towerBox
+        #t3.tower.available
     script(src='/vendor/jquery/dist/jquery.min.js')    
     script(src='/vendor/lodash/lodash.min.js')
     script(src=isProd ? '/index.min.js' : '/index.js')
